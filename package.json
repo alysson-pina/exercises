@@ -1,0 +1,23 @@
+{
+  "name": "exercises",
+  "version": "0.0.1",
+  "type": "module",
+  "author": {
+    "name": "Alysson Ferreira"
+  },
+  "scripts": {
+    "build": "tsc *.ts",
+    "test": "npm run build && mocha *.test.ts"
+  },
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-typescript": "^7.21.5",
+    "@types/chai": "^4.3.5",
+    "typescript": "^5.0.4"
+  }
+}
