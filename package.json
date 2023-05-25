@@ -1,23 +1,30 @@
 {
   "name": "exercises",
   "version": "0.0.1",
-  "type": "module",
+  "type": "commonjs",
   "author": {
     "name": "Alysson Ferreira"
   },
   "scripts": {
-    "build": "tsc *.ts",
-    "test": "npm run build && mocha *.test.ts"
-  },
-  "dependencies": {
-    "chai": "^4.3.7",
-    "mocha": "^10.2.0"
+    "build": "babel src --out-dir dist --extensions \".ts\" --copy-files",
+    "pretest": "npm run build",
+    "test": "mocha --require @babel/register dist/*.test.js"
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-typescript": "^7.21.5",
     "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.7",
+    "esm": "^3.2.25",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@babel/register": "^7.21.0",
+    "webpack": "^5.84.1"
   }
 }
